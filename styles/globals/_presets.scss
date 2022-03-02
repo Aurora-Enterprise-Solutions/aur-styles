@@ -1,0 +1,67 @@
+.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+}
+
+$sizes: (
+	xs: 4px,
+	s: 8px,
+	m: 16px,
+	l: 24px,
+);
+
+$positions: t, l, b, r;
+
+@mixin size($pos, $size, $value, $type) {
+	$position: top;
+
+	@if $pos == b {
+		$position: bottom;
+	}
+
+    @if $pos == l {
+		$position: left;
+	}
+
+    @if $pos == r {
+		$position: right;
+	}
+
+	&#{$pos}-#{$size} {
+		#{$type}-#{$position}: $value;
+	}
+}
+
+.no-margin {
+	margin: 0;
+}
+
+// mt-xs, ml-xs, mb-xs, mr-xs
+// mt-s, ml-s, mb-s, mr-s
+// mt-m, ml-m, mb-m, mr-m
+// mt-l, ml-l, mb-l, mr-l
+.m {
+	@each $size, $sizeValue in $sizes {
+		@each $pos in $positions {
+			@include size($pos, $size, $sizeValue, margin);
+		}
+	}
+}
+
+.no-padding {
+	padding: 0;
+}
+
+// pt-xs, pl-xs, pb-xs, pr-xs
+// pt-s, pl-s, pb-s, pr-s
+// pt-m, pl-m, pb-m, pr-m
+// pt-l, pl-l, pb-l, pr-l
+.p {
+	@each $size, $sizeValue in $sizes {
+		@each $pos in $positions {
+			@include size($pos, $size, $sizeValue, padding);
+		}
+	}
+}

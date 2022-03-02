@@ -1,0 +1,21 @@
+code {
+  background-color: #F9F8FF !important;
+}
+
+.sidebar-heading span {
+  font-weight: 600;
+}
+
+.sidebar-links a {
+  font-size: 1rem !important;
+}
+
+pre[class*=language-] code {
+  background-color: transparent !important;
+}
+
+.nav-link.active {
+  background-color: #07D79C !important;
+}
+
+/*# sourceMappingURL=aur-styles.css.map */

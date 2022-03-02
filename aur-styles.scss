@@ -1,0 +1,15 @@
+// GLOBALS
+@import './styles/globals/colors';
+@import './styles/globals/theme-provider';
+@import './styles/globals/fonts';
+@import './styles/globals/dom';
+@import './styles/globals/presets';
+
+// THEMES
+// Warning! The order of themes is important. Last theme will override previous.
+@import './styles/themes/dark';
+@import './styles/themes/light';
+
+// COMPONENTS
+@import './styles/components/grid';
+@import './styles/components/button';

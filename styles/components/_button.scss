@@ -1,0 +1,100 @@
+@use "sass:map";
+
+.v-btn {
+
+    span {
+        letter-spacing: normal;
+        font-weight: $font-weight-medium;
+    }
+
+    &--is-elevated {
+        box-shadow: unset !important;
+    }
+
+    &:focus::before {
+        opacity: 0 !important;
+    }
+
+    &.v-btn--icon {
+        .v-btn__content {
+            font-size: 1.5rem;
+
+            i {
+                color: currentColor;
+            }
+        }
+    }
+
+    &:not([aur-type]),
+    &[aur-type='primary'] {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Primary Colorful background-color);
+
+            span {
+                color: map-fetch($Button, Primary Colorful color);
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Primary Text background-color);
+
+            span {
+                color: map-fetch($Button, Primary Text color);
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Primary Text color);
+            }
+        }
+    }
+
+    &[aur-type='secondary'] {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Secondary Colorful background-color);
+
+            span {
+                color: map-fetch($Button, Secondary Colorful color);
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Secondary Text background-color);
+
+            span {
+                color: map-fetch($Button, Secondary Text color);
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Secondary Text color);
+            }
+        }
+    }
+
+    &[class*='theme-'].v-btn--disabled {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Disabled Colorful background-color) !important;
+
+            span {
+                color: map-fetch($Button, Disabled Colorful color);
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Disabled Text background-color);
+
+            span {
+                color: map-fetch($Button, Disabled Text color);
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Disabled Text color);
+            }
+        }
+    }
+}

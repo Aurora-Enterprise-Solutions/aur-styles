@@ -1,0 +1,40 @@
+{
+    "name": "@aurora-enterprise-solutions/aur-styles",
+    "version": "0.0.1",
+    "description": "The Aurora styles guide",
+    "main": "index.js",
+    "authors": {
+        "name": "Jesus Barrientos",
+        "email": "jesus.barrientos@aurora-enterprise.com"
+    },
+    "files": [
+        "aur-styles.css",
+        "fonts",
+        "*.md"
+    ],
+    "repository": "https://github.com/Aurora-Enterprise-Solutions/aur-styles/aur-styles",
+    "scripts": {
+        "dev": "nodemon --ext md,vue,js --watch .vuepress --watch . --exec vuepress dev docs",
+        "sass": "sass --watch aur-styles.scss aur-styles.css",
+        "sass:docs": "sass --watch docs/.vuepress/styles:docs/.vuepress/styles",
+        "build": "vuepress build docs",
+        "deploy": "sh deploy.sh"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@vuepress/plugin-back-to-top": "^1.9.7",
+        "@vuepress/plugin-medium-zoom": "^1.9.7",
+        "@vuepress/plugin-nprogress": "^1.9.7",
+        "@vuepress/plugin-pwa": "^1.9.7",
+        "@xiaopanda/vuepress-plugin-code-copy": "^1.0.3",
+        "node-sass": "^7.0.1",
+        "nodemon": "^2.0.15",
+        "sass-loader": "10.1.1",
+        "vuepress": "^1.5.3",
+        "vuepress-plugin-vue-example": "^1.1.4"
+    },
+    "dependencies": {
+        "remixicon": "^2.5.0",
+        "vuetify": "2.6.3"
+    }
+}

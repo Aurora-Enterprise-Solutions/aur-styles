@@ -1,0 +1,141 @@
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace +
+			str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: '?',
+		svg: '#' + str-replace($name, ' ', '_'),
+	);
+
+	$formats: (
+		otf: 'opentype',
+		ttf: 'truetype',
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+@include font-face('Inter', 'fonts/Inter-Light', $font-weight-light, normal, ttf);
+@include font-face('Inter', 'fonts/Inter-Regular', $font-weight-regular, normal, ttf);
+@include font-face('Inter', 'fonts/Inter-Medium', $font-weight-medium, normal, ttf);
+@include font-face('Inter', 'fonts/Inter-Bold', $font-weight-bold, normal, ttf);
+
+$h-sizes: (
+	1: (
+		size: 2.71rem,
+		weight: $font-weight-bold,
+		text-transform: none,
+	),
+	2: (
+		size: 2.14rem,
+		weight: $font-weight-bold,
+		text-transform: none,
+	),
+	3: (
+		size: 1.71rem,
+		weight: $font-weight-bold,
+		text-transform: none,
+	),
+	4: (
+		size: 1.42rem,
+		weight: $font-weight-medium,
+		text-transform: none,
+	),
+	5: (
+		size: 1.14rem,
+		weight: $font-weight-regular,
+		text-transform: none,
+	),
+	6: (
+		size: 1rem,
+		weight: $font-weight-regular,
+		text-transform: none,
+	),
+);
+$p-size: 14px;
+
+html,
+body {
+    @extend %font-props;
+	font-size: $p-size;
+}
+
+@mixin h-sizes {
+	@each $key, $value in $h-sizes {
+		h#{$key} {
+			color: map-fetch($Font, Title color);
+			font-family: 'Inter', serif;
+			font-size: map-get($value, 'size');
+			font-weight: map-get($value, 'weight');
+			text-transform: map-get($value, 'text-transform');
+		}
+	}
+}
+@include h-sizes;
+
+p,
+label,
+span,
+a {
+	@extend %font-props;
+
+    &.caption {
+        font-size: 0.78rem;
+        font-family: 'Inter', sans-serif;
+        font-weight: $font-weight-light;
+        font-style: normal;
+        color: map-fetch($Font, Caption color);
+    }
+}
+
+p {
+	text-align: justify;
+}
+
+a {
+	color: map-fetch($Font, Link color);
+	user-select: none;
+
+	&:hover,
+	&:active {
+		color: rgba(map-fetch($Font, Link color), 0.3);
+	}
+}
+
+%font-props {
+	font-size: 1rem;
+	font-family: 'Inter', sans-serif;
+	font-weight: $font-weight-regular;
+	font-style: normal;
+	color: map-fetch($Font, Body color);
+
+	b {
+		font-weight: $font-weight-bold;
+	}
+}

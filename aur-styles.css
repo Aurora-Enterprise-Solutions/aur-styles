@@ -1,0 +1,348 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  src: url("fonts/Inter-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/Inter-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Inter-Bold.ttf") format("truetype");
+}
+html,
+body {
+  font-size: 14px;
+}
+
+h1 {
+  color: var(--aur-font-color-title);
+  font-family: "Inter", serif;
+  font-size: 2.71rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+h2 {
+  color: var(--aur-font-color-title);
+  font-family: "Inter", serif;
+  font-size: 2.14rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+h3 {
+  color: var(--aur-font-color-title);
+  font-family: "Inter", serif;
+  font-size: 1.71rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+h4 {
+  color: var(--aur-font-color-title);
+  font-family: "Inter", serif;
+  font-size: 1.42rem;
+  font-weight: 500;
+  text-transform: none;
+}
+
+h5 {
+  color: var(--aur-font-color-title);
+  font-family: "Inter", serif;
+  font-size: 1.14rem;
+  font-weight: 400;
+  text-transform: none;
+}
+
+h6 {
+  color: var(--aur-font-color-title);
+  font-family: "Inter", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: none;
+}
+
+p.caption,
+label.caption,
+span.caption,
+a.caption {
+  font-size: 0.78rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: var(--aur-font-color-caption);
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: var(--aur-font-color-link);
+  user-select: none;
+}
+a:hover, a:active {
+  color: rgba(var(--aur-font-color-link), 0.3);
+}
+
+html,
+body, p,
+label,
+span,
+a {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--aur-font-color-body);
+}
+html b,
+body b, p b,
+label b,
+span b,
+a b {
+  font-weight: 700;
+}
+
+body {
+  transition: all 0.3s;
+  font-family: "Inter", sans-serif !important;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.mt-xs {
+  margin-top: 4px;
+}
+.ml-xs {
+  margin-left: 4px;
+}
+.mb-xs {
+  margin-bottom: 4px;
+}
+.mr-xs {
+  margin-right: 4px;
+}
+.mt-s {
+  margin-top: 8px;
+}
+.ml-s {
+  margin-left: 8px;
+}
+.mb-s {
+  margin-bottom: 8px;
+}
+.mr-s {
+  margin-right: 8px;
+}
+.mt-m {
+  margin-top: 16px;
+}
+.ml-m {
+  margin-left: 16px;
+}
+.mb-m {
+  margin-bottom: 16px;
+}
+.mr-m {
+  margin-right: 16px;
+}
+.mt-l {
+  margin-top: 24px;
+}
+.ml-l {
+  margin-left: 24px;
+}
+.mb-l {
+  margin-bottom: 24px;
+}
+.mr-l {
+  margin-right: 24px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.pt-xs {
+  padding-top: 4px;
+}
+.pl-xs {
+  padding-left: 4px;
+}
+.pb-xs {
+  padding-bottom: 4px;
+}
+.pr-xs {
+  padding-right: 4px;
+}
+.pt-s {
+  padding-top: 8px;
+}
+.pl-s {
+  padding-left: 8px;
+}
+.pb-s {
+  padding-bottom: 8px;
+}
+.pr-s {
+  padding-right: 8px;
+}
+.pt-m {
+  padding-top: 16px;
+}
+.pl-m {
+  padding-left: 16px;
+}
+.pb-m {
+  padding-bottom: 16px;
+}
+.pr-m {
+  padding-right: 16px;
+}
+.pt-l {
+  padding-top: 24px;
+}
+.pl-l {
+  padding-left: 24px;
+}
+.pb-l {
+  padding-bottom: 24px;
+}
+.pr-l {
+  padding-right: 24px;
+}
+
+body,
+body[theme=dark] {
+  --aur-background-color: #F5F8FE;
+  --aur-font-color-title: #000635;
+  --aur-font-color-body: rgba(0, 6, 53, 0.65);
+  --aur-font-color-caption: rgba(0, 6, 53, 0.45);
+  --aur-font-color-disable: rgba(0, 6, 53, 0.25);
+  --aur-font-color-link: #07d79c;
+  --aur-button-primary-colorful-bkg-color: #AB99E9;
+  --aur-button-primary-colorful-color: #F9F8FF;
+  --aur-button-secondary-colorful-bkg-color: #AB99E9;
+  --aur-button-secondary-colorful-color: #F9F8FF;
+  --aur-button-disabled-colorful-bkg-color: #EDEDED;
+  --aur-button-disabled-colorful-color: #F9F8FF;
+  --aur-button-primary-text-bkg-color: transparent;
+  --aur-button-primary-text-color: #AB99E9;
+  --aur-button-secondary-text-bkg-color: transparent;
+  --aur-button-secondary-text-color: #07D79C;
+  --aur-button-disabled-text-bkg-color: transparent;
+  --aur-button-disabled-text-color: #EDEDED;
+}
+
+body,
+body[theme=light] {
+  --aur-background-color: #F5F8FE;
+  --aur-font-color-title: #000635;
+  --aur-font-color-body: rgba(0, 6, 53, 0.85);
+  --aur-font-color-caption: rgba(0, 6, 53, 0.55);
+  --aur-font-color-disable: rgba(0, 6, 53, 0.25);
+  --aur-font-color-link: #07d79c;
+  --aur-button-primary-colorful-bkg-color: #AB99E9;
+  --aur-button-primary-colorful-color: #F9F8FF;
+  --aur-button-secondary-colorful-bkg-color: #07D79C;
+  --aur-button-secondary-colorful-color: #F9F8FF;
+  --aur-button-disabled-colorful-bkg-color: #EDEDED;
+  --aur-button-disabled-colorful-color: #F9F8FF;
+  --aur-button-primary-text-bkg-color: transparent;
+  --aur-button-primary-text-color: #AB99E9;
+  --aur-button-secondary-text-bkg-color: transparent;
+  --aur-button-secondary-text-color: #07D79C;
+  --aur-button-disabled-text-bkg-color: transparent;
+  --aur-button-disabled-text-color: #EDEDED;
+}
+
+.col {
+  padding: 8px;
+}
+
+.v-btn span {
+  letter-spacing: normal;
+  font-weight: 500;
+}
+.v-btn--is-elevated {
+  box-shadow: unset !important;
+}
+.v-btn:focus::before {
+  opacity: 0 !important;
+}
+.v-btn.v-btn--icon .v-btn__content {
+  font-size: 1.5rem;
+}
+.v-btn.v-btn--icon .v-btn__content i {
+  color: currentColor;
+}
+.v-btn:not([aur-type]).v-btn--has-bg, .v-btn[aur-type=primary].v-btn--has-bg {
+  background-color: var(--aur-button-primary-colorful-bkg-color);
+}
+.v-btn:not([aur-type]).v-btn--has-bg span, .v-btn[aur-type=primary].v-btn--has-bg span {
+  color: var(--aur-button-primary-colorful-color);
+}
+.v-btn:not([aur-type]).v-btn--text, .v-btn[aur-type=primary].v-btn--text {
+  background-color: var(--aur-button-primary-text-bkg-color);
+}
+.v-btn:not([aur-type]).v-btn--text span, .v-btn[aur-type=primary].v-btn--text span {
+  color: var(--aur-button-primary-text-color);
+}
+.v-btn:not([aur-type]).v-btn--icon span, .v-btn[aur-type=primary].v-btn--icon span {
+  color: var(--aur-button-primary-text-color);
+}
+.v-btn[aur-type=secondary].v-btn--has-bg {
+  background-color: var(--aur-button-secondary-colorful-bkg-color);
+}
+.v-btn[aur-type=secondary].v-btn--has-bg span {
+  color: var(--aur-button-secondary-colorful-color);
+}
+.v-btn[aur-type=secondary].v-btn--text {
+  background-color: var(--aur-button-secondary-text-bkg-color);
+}
+.v-btn[aur-type=secondary].v-btn--text span {
+  color: var(--aur-button-secondary-text-color);
+}
+.v-btn[aur-type=secondary].v-btn--icon span {
+  color: var(--aur-button-secondary-text-color);
+}
+.v-btn[class*=theme-].v-btn--disabled.v-btn--has-bg {
+  background-color: var(--aur-button-disabled-colorful-bkg-color) !important;
+}
+.v-btn[class*=theme-].v-btn--disabled.v-btn--has-bg span {
+  color: var(--aur-button-disabled-colorful-color);
+}
+.v-btn[class*=theme-].v-btn--disabled.v-btn--text {
+  background-color: var(--aur-button-disabled-text-bkg-color);
+}
+.v-btn[class*=theme-].v-btn--disabled.v-btn--text span {
+  color: var(--aur-button-disabled-text-color);
+}
+.v-btn[class*=theme-].v-btn--disabled.v-btn--icon span {
+  color: var(--aur-button-disabled-text-color);
+}
+
+/*# sourceMappingURL=aur-styles.css.map */

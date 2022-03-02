@@ -1,0 +1,23 @@
+// Global
+code {
+    background-color: #F9F8FF !important;
+}
+
+// Sidebar
+.sidebar-heading span {
+    font-weight: 600;
+}
+
+.sidebar-links a {
+    font-size: 1rem !important;
+}
+
+// Code example
+pre[class*='language-'] {
+    code {
+        background-color: transparent !important;
+    }
+}
+.nav-link.active {
+    background-color: #07D79C !important;
+}

@@ -1,0 +1,40 @@
+@use "sass:map";
+
+@mixin setTheme($config, $variable) {
+    $color-variables:
+        'aur-background-color',
+        'aur-font-color-title',
+        'aur-font-color-body',
+        'aur-font-color-caption',
+        'aur-font-color-disable',
+        'aur-font-color-link',
+        'aur-button-primary-colorful-bkg-color',
+        'aur-button-primary-colorful-color',
+        'aur-button-secondary-colorful-bkg-color',
+        'aur-button-secondary-colorful-color',
+        'aur-button-disabled-colorful-bkg-color',
+        'aur-button-disabled-colorful-color',
+        'aur-button-primary-text-bkg-color',
+        'aur-button-primary-text-color',
+        'aur-button-secondary-text-bkg-color',
+        'aur-button-secondary-text-color',
+        'aur-button-disabled-text-bkg-color',
+        'aur-button-disabled-text-color',;
+
+	// Warnings
+    @each $color in $color-variables {
+        @if not map.has-key($variable, $color) {
+            @error "Missing color variable #{$color}.";
+        }
+	}
+
+	// Setup
+    body,
+	body[theme="#{map.get($config, 'name')}"] {
+        @each $color in $color-variables {
+            --#{$color}: #{map.get($variable, $color)};
+        }
+	}
+}
+
+@import './theme-variables';

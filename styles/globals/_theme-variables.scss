@@ -1,0 +1,81 @@
+@function map-fetch($map, $keys) {
+	$key: nth($keys, 1);
+	$length: length($keys);
+	$value: map-get($map, $key);
+	@if ($length > 1) {
+		$rest: ();
+		@for $i from 2 through $length {
+			$rest: append($rest, nth($keys, $i));
+		}
+		@return map-fetch($value, $rest);
+	} @else {
+		@return $value;
+	}
+}
+
+$Background: (
+    color: var(--aur-background-color),
+);
+
+$Font: (
+    Title: (
+        color: var(--aur-font-color-title),
+    ),
+    Body: (
+        color: var(--aur-font-color-body),
+    ),
+    Caption: (
+        color: var(--aur-font-color-caption),
+    ),
+    Link: (
+        color: var(--aur-font-color-link),
+    ),
+    Disable: (
+        color: var(--aur-font-color-disable),
+    ),
+);
+
+$Button: (
+    Primary: (
+        Colorful: (
+            color: var(--aur-button-primary-colorful-color),
+            background-color: var(--aur-button-primary-colorful-bkg-color),
+        ),
+        Text: (
+            color: var(--aur-button-primary-text-color),
+            background-color: var(--aur-button-primary-text-bkg-color),
+        ),
+        Icon: (
+            color: var(--aur-font-color-title),
+            background-color: var(--aur-font-color-title),
+        ),
+    ),
+    Secondary: (
+        Colorful: (
+            color: var(--aur-button-secondary-colorful-color),
+            background-color: var(--aur-button-secondary-colorful-bkg-color),
+        ),
+        Text: (
+            color: var(--aur-button-secondary-text-color),
+            background-color: var(--aur-button-secondary-text-bkg-color),
+        ),
+        Icon: (
+            color: var(--aur-font-color-title),
+            background-color: var(--aur-font-color-title),
+        ),
+    ),
+    Disabled: (
+        Colorful: (
+            color: var(--aur-button-disabled-colorful-color),
+            background-color: var(--aur-button-disabled-colorful-bkg-color),
+        ),
+        Text: (
+            color: var(--aur-button-disabled-text-color),
+            background-color: var(--aur-button-disabled-text-bkg-color),
+        ),
+        Icon: (
+            color: var(--aur-font-color-title),
+            background-color: var(--aur-font-color-title),
+        ),
+    ),
+);

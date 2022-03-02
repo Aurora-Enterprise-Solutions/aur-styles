@@ -1,0 +1,29 @@
+// THEME: DARK
+$config: (
+	'name': 'dark',
+);
+
+$variable: (
+    'aur-background-color': $aur-color-sky-white,
+
+	'aur-font-color-title': rgba($aur-color-midnight-blue, 1),
+	'aur-font-color-body': rgba($aur-color-midnight-blue, 0.65),
+	'aur-font-color-caption': rgba($aur-color-midnight-blue, 0.45),
+	'aur-font-color-disable': rgba($aur-color-midnight-blue, 0.25),
+	'aur-font-color-link': rgba($aur-color-aurora-green, 1),
+
+    'aur-button-primary-colorful-bkg-color': $aur-color-lavender-purple,
+    'aur-button-primary-colorful-color': $aur-color-floral-white,
+    'aur-button-secondary-colorful-bkg-color': $aur-color-lavender-purple,
+    'aur-button-secondary-colorful-color': $aur-color-floral-white,
+    'aur-button-disabled-colorful-bkg-color': $aur-color-soft-grey,
+    'aur-button-disabled-colorful-color': $aur-color-floral-white,
+    'aur-button-primary-text-bkg-color': transparent,
+    'aur-button-primary-text-color': $aur-color-lavender-purple,
+    'aur-button-secondary-text-bkg-color': transparent,
+    'aur-button-secondary-text-color': $aur-color-aurora-green,
+    'aur-button-disabled-text-bkg-color': transparent,
+    'aur-button-disabled-text-color': $aur-color-soft-grey,
+);
+
+@include setTheme($config, $variable);
