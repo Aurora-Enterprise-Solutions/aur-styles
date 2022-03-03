@@ -2,3 +2,7 @@ body {
     transition: all 0.3s;
     font-family: 'Inter', sans-serif !important;
 }
+
+.v-application {
+    background-color: map-fetch($Application, background-color) !important;
+}

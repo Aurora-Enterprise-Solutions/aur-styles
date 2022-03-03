@@ -38,12 +38,12 @@
 
 $font-weight-light: 200;
 $font-weight-regular: 400;
-$font-weight-medium: 500;
+$font-weight-semibold: 600;
 $font-weight-bold: 700;
 
 @include font-face('Inter', 'fonts/Inter-Light', $font-weight-light, normal, ttf);
 @include font-face('Inter', 'fonts/Inter-Regular', $font-weight-regular, normal, ttf);
-@include font-face('Inter', 'fonts/Inter-Medium', $font-weight-medium, normal, ttf);
+@include font-face('Inter', 'fonts/Inter-SemiBold', $font-weight-semibold, normal, ttf);
 @include font-face('Inter', 'fonts/Inter-Bold', $font-weight-bold, normal, ttf);
 
 $h-sizes: (
@@ -64,7 +64,7 @@ $h-sizes: (
 	),
 	4: (
 		size: 1.42rem,
-		weight: $font-weight-medium,
+		weight: $font-weight-semibold,
 		text-transform: none,
 	),
 	5: (
@@ -83,7 +83,7 @@ $p-size: 14px;
 html,
 body {
     @extend %font-props;
-	font-size: $p-size;
+	font-size: $p-size !important;
 }
 
 @mixin h-sizes {
@@ -102,10 +102,12 @@ body {
 p,
 label,
 span,
+input,
+legend,
 a {
 	@extend %font-props;
 
-    &.caption {
+    &.aur-caption {
         font-size: 0.78rem;
         font-family: 'Inter', sans-serif;
         font-weight: $font-weight-light;
@@ -133,7 +135,7 @@ a {
 	font-family: 'Inter', sans-serif;
 	font-weight: $font-weight-regular;
 	font-style: normal;
-	color: map-fetch($Font, Body color);
+	color: map-fetch($Font, Body color) !important;
 
 	b {
 		font-weight: $font-weight-bold;

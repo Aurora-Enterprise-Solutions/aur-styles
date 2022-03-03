@@ -13,8 +13,9 @@
 	}
 }
 
-$Background: (
-    color: var(--aur-background-color),
+$Application: (
+    background-color: var(--aur-background-color),
+    error-color: var(--aur-error-color),
 );
 
 $Font: (
@@ -77,5 +78,18 @@ $Button: (
             color: var(--aur-font-color-title),
             background-color: var(--aur-font-color-title),
         ),
+    ),
+);
+
+$Card: (
+    Shadow: (
+        color: var(--aur-card-box-shadow-color),
+    ),
+);
+
+$TextField: (
+    Border: (
+        color: var(--aur-text-field-border-color),
+        color-not-focused: var(--aur-text-field-border-color-not-focused),
     ),
 );

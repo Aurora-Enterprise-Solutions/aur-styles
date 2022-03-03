@@ -13,8 +13,8 @@
 @font-face {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 500;
-  src: url("fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 600;
+  src: url("fonts/Inter-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
@@ -24,7 +24,7 @@
 }
 html,
 body {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 h1 {
@@ -55,7 +55,7 @@ h4 {
   color: var(--aur-font-color-title);
   font-family: "Inter", serif;
   font-size: 1.42rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: none;
 }
 
@@ -75,10 +75,12 @@ h6 {
   text-transform: none;
 }
 
-p.caption,
-label.caption,
-span.caption,
-a.caption {
+p.aur-caption,
+label.aur-caption,
+span.aur-caption,
+input.aur-caption,
+legend.aur-caption,
+a.aur-caption {
   font-size: 0.78rem;
   font-family: "Inter", sans-serif;
   font-weight: 200;
@@ -98,21 +100,25 @@ a:hover, a:active {
   color: rgba(var(--aur-font-color-link), 0.3);
 }
 
-html,
+.v-text-field .v-input__slot .v-text-field__slot input, .v-text-field .v-input__slot .v-text-field__slot .v-label, html,
 body, p,
 label,
 span,
+input,
+legend,
 a {
   font-size: 1rem;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: var(--aur-font-color-body);
+  color: var(--aur-font-color-body) !important;
 }
-html b,
+.v-text-field .v-input__slot .v-text-field__slot input b, .v-text-field .v-input__slot .v-text-field__slot .v-label b, html b,
 body b, p b,
 label b,
 span b,
+input b,
+legend b,
 a b {
   font-weight: 700;
 }
@@ -120,6 +126,10 @@ a b {
 body {
   transition: all 0.3s;
   font-family: "Inter", sans-serif !important;
+}
+
+.v-application {
+  background-color: var(--aur-background-color) !important;
 }
 
 .ellipsis {
@@ -236,12 +246,13 @@ body {
 }
 
 body,
-body[theme=dark] {
-  --aur-background-color: #F5F8FE;
-  --aur-font-color-title: #000635;
-  --aur-font-color-body: rgba(0, 6, 53, 0.65);
-  --aur-font-color-caption: rgba(0, 6, 53, 0.45);
-  --aur-font-color-disable: rgba(0, 6, 53, 0.25);
+.v-application.theme--dark {
+  --aur-error-color: #FF5757;
+  --aur-background-color: #08132A;
+  --aur-font-color-title: #08132a;
+  --aur-font-color-body: rgba(8, 19, 42, 0.65);
+  --aur-font-color-caption: rgba(8, 19, 42, 0.45);
+  --aur-font-color-disable: rgba(8, 19, 42, 0.25);
   --aur-font-color-link: #07d79c;
   --aur-button-primary-colorful-bkg-color: #AB99E9;
   --aur-button-primary-colorful-color: #F9F8FF;
@@ -255,15 +266,19 @@ body[theme=dark] {
   --aur-button-secondary-text-color: #07D79C;
   --aur-button-disabled-text-bkg-color: transparent;
   --aur-button-disabled-text-color: #EDEDED;
+  --aur-card-box-shadow-color: #E4E4E4;
+  --aur-text-field-border-color: #AB99E9;
+  --aur-text-field-border-color-not-focused: #08132A;
 }
 
 body,
-body[theme=light] {
+.v-application.theme--light {
+  --aur-error-color: #FF5757;
   --aur-background-color: #F5F8FE;
-  --aur-font-color-title: #000635;
-  --aur-font-color-body: rgba(0, 6, 53, 0.85);
-  --aur-font-color-caption: rgba(0, 6, 53, 0.55);
-  --aur-font-color-disable: rgba(0, 6, 53, 0.25);
+  --aur-font-color-title: #08132a;
+  --aur-font-color-body: rgba(8, 19, 42, 0.65);
+  --aur-font-color-caption: rgba(8, 19, 42, 0.55);
+  --aur-font-color-disable: rgba(8, 19, 42, 0.25);
   --aur-font-color-link: #07d79c;
   --aur-button-primary-colorful-bkg-color: #AB99E9;
   --aur-button-primary-colorful-color: #F9F8FF;
@@ -277,6 +292,9 @@ body[theme=light] {
   --aur-button-secondary-text-color: #07D79C;
   --aur-button-disabled-text-bkg-color: transparent;
   --aur-button-disabled-text-color: #EDEDED;
+  --aur-card-box-shadow-color: #E4E4E4;
+  --aur-text-field-border-color: #AB99E9;
+  --aur-text-field-border-color-not-focused: #E1D9FB;
 }
 
 .col {
@@ -285,7 +303,8 @@ body[theme=light] {
 
 .v-btn span {
   letter-spacing: normal;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 .v-btn--is-elevated {
   box-shadow: unset !important;
@@ -315,19 +334,19 @@ body[theme=light] {
   color: var(--aur-button-primary-text-color);
 }
 .v-btn[aur-type=secondary].v-btn--has-bg {
-  background-color: var(--aur-button-secondary-colorful-bkg-color);
+  background-color: var(--aur-button-secondary-colorful-bkg-color) !important;
 }
 .v-btn[aur-type=secondary].v-btn--has-bg span {
-  color: var(--aur-button-secondary-colorful-color);
+  color: var(--aur-button-secondary-colorful-color) !important;
 }
 .v-btn[aur-type=secondary].v-btn--text {
-  background-color: var(--aur-button-secondary-text-bkg-color);
+  background-color: var(--aur-button-secondary-text-bkg-color) !important;
 }
 .v-btn[aur-type=secondary].v-btn--text span {
-  color: var(--aur-button-secondary-text-color);
+  color: var(--aur-button-secondary-text-color) !important;
 }
 .v-btn[aur-type=secondary].v-btn--icon span {
-  color: var(--aur-button-secondary-text-color);
+  color: var(--aur-button-secondary-text-color) !important;
 }
 .v-btn[class*=theme-].v-btn--disabled.v-btn--has-bg {
   background-color: var(--aur-button-disabled-colorful-bkg-color) !important;
@@ -343,6 +362,27 @@ body[theme=light] {
 }
 .v-btn[class*=theme-].v-btn--disabled.v-btn--icon span {
   color: var(--aur-button-disabled-text-color);
+}
+
+.v-card {
+  box-shadow: var(--aur-card-box-shadow-color) 0px 3px 16px -5px !important;
+}
+.v-card .v-card__title .aur-card-title {
+  font-weight: 700;
+}
+
+.v-text-field .v-input__slot {
+  border-width: 1px;
+}
+.v-text-field .v-input__slot > fieldset {
+  border-width: 1px !important;
+  color: var(--aur-text-field-border-color);
+}
+.v-text-field.error--text .v-input__slot > fieldset {
+  color: var(--aur-error-color);
+}
+.v-text-field:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {
+  color: var(--aur-text-field-border-color-not-focused) !important;
 }
 
 /*# sourceMappingURL=aur-styles.css.map */

@@ -1,0 +1,40 @@
+$text-field-border-width: 1px;
+
+.v-text-field {
+    .v-input__slot {
+        border-width: $text-field-border-width;
+
+        & > fieldset {
+            border-width: $text-field-border-width !important;
+            color: map-fetch($TextField, Border color);
+        }
+
+        .v-text-field__slot {
+            .v-label {
+                @extend %font-props;
+            }
+
+            input {
+                @extend %font-props;
+            }
+        }
+    }
+
+    &.error--text {
+        .v-input__slot {
+            & > fieldset {
+                color: map-fetch($Application, error-color);
+            }
+        }
+    }
+
+    &:not(.v-input--is-focused):not(.v-input--has-state) {
+        & > .v-input__control {
+            & > .v-input__slot {
+                fieldset {
+                    color: map-fetch($TextField, Border color-not-focused) !important;
+                }
+            }
+        }
+    }
+}

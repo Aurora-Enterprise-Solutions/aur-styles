@@ -2,6 +2,7 @@
 
 @mixin setTheme($config, $variable) {
     $color-variables:
+        'aur-error-color',
         'aur-background-color',
         'aur-font-color-title',
         'aur-font-color-body',
@@ -19,7 +20,10 @@
         'aur-button-secondary-text-bkg-color',
         'aur-button-secondary-text-color',
         'aur-button-disabled-text-bkg-color',
-        'aur-button-disabled-text-color',;
+        'aur-button-disabled-text-color',
+        'aur-card-box-shadow-color',
+        'aur-text-field-border-color',
+        'aur-text-field-border-color-not-focused',;
 
 	// Warnings
     @each $color in $color-variables {
@@ -30,7 +34,7 @@
 
 	// Setup
     body,
-	body[theme="#{map.get($config, 'name')}"] {
+	.v-application.theme--#{map.get($config, 'name')} {
         @each $color in $color-variables {
             --#{$color}: #{map.get($variable, $color)};
         }

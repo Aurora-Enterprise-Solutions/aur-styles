@@ -4,7 +4,8 @@
 
     span {
         letter-spacing: normal;
-        font-weight: $font-weight-medium;
+        font-weight: $font-weight-semibold;
+        font-size: 0.9rem;
     }
 
     &--is-elevated {
@@ -52,24 +53,24 @@
 
     &[aur-type='secondary'] {
         &.v-btn--has-bg {
-            background-color: map-fetch($Button, Secondary Colorful background-color);
+            background-color: map-fetch($Button, Secondary Colorful background-color) !important;
 
             span {
-                color: map-fetch($Button, Secondary Colorful color);
+                color: map-fetch($Button, Secondary Colorful color) !important;
             }
         }
 
         &.v-btn--text {
-            background-color: map-fetch($Button, Secondary Text background-color);
+            background-color: map-fetch($Button, Secondary Text background-color) !important;
 
             span {
-                color: map-fetch($Button, Secondary Text color);
+                color: map-fetch($Button, Secondary Text color) !important;
             }
         }
 
         &.v-btn--icon {
             span {
-                color: map-fetch($Button, Secondary Text color);
+                color: map-fetch($Button, Secondary Text color) !important;
             }
         }
     }

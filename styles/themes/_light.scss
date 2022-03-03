@@ -4,10 +4,11 @@ $config: (
 );
 
 $variable: (
+    'aur-error-color': $aur-color-watermelon,
     'aur-background-color': $aur-color-sky-white,
 
 	'aur-font-color-title': rgba($aur-color-midnight-blue, 1),
-	'aur-font-color-body': rgba($aur-color-midnight-blue, 0.85),
+	'aur-font-color-body': rgba($aur-color-midnight-blue, 0.65),
 	'aur-font-color-caption': rgba($aur-color-midnight-blue, 0.55),
 	'aur-font-color-disable': rgba($aur-color-midnight-blue, 0.25),
 	'aur-font-color-link': rgba($aur-color-aurora-green, 1),
@@ -24,6 +25,11 @@ $variable: (
     'aur-button-secondary-text-color': $aur-color-aurora-green,
     'aur-button-disabled-text-bkg-color': transparent,
     'aur-button-disabled-text-color': $aur-color-soft-grey,
+
+    'aur-card-box-shadow-color': $aur-color-low-grey,
+
+    'aur-text-field-border-color': $aur-color-lavender-purple,
+    'aur-text-field-border-color-not-focused': $aur-color-purple,
 );
 
 @include setTheme($config, $variable);
