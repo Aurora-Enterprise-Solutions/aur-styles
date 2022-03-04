@@ -1,0 +1,15 @@
+.v-input {
+    &.error--text {
+        .v-input__slot {
+            & > fieldset {
+                color: map-fetch($Application, error-color);
+            }
+        }
+
+        div[class$="__details"] {
+            * {
+                color: map-fetch($Application, error-color) !important;
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@ $variable: (
     'aur-background-color': $aur-color-sky-white,
 
 	'aur-font-color-title': rgba($aur-color-midnight-blue, 1),
-	'aur-font-color-body': rgba($aur-color-midnight-blue, 0.65),
+	'aur-font-color-body': rgba($aur-color-midnight-blue, 0.75),
 	'aur-font-color-caption': rgba($aur-color-midnight-blue, 0.55),
 	'aur-font-color-disable': rgba($aur-color-midnight-blue, 0.25),
 	'aur-font-color-link': rgba($aur-color-aurora-green, 1),
@@ -29,7 +29,7 @@ $variable: (
     'aur-card-box-shadow-color': $aur-color-low-grey,
 
     'aur-text-field-border-color': $aur-color-lavender-purple,
-    'aur-text-field-border-color-not-focused': $aur-color-purple,
+    'aur-text-field-border-color-not-focused': $aur-color-light-purple,
 );
 
 @include setTheme($config, $variable);

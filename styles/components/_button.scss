@@ -29,24 +29,24 @@
     &:not([aur-type]),
     &[aur-type='primary'] {
         &.v-btn--has-bg {
-            background-color: map-fetch($Button, Primary Colorful background-color);
+            background-color: map-fetch($Button, Primary Colorful background-color) !important;
 
             span {
-                color: map-fetch($Button, Primary Colorful color);
+                color: map-fetch($Button, Primary Colorful color) !important;
             }
         }
 
         &.v-btn--text {
-            background-color: map-fetch($Button, Primary Text background-color);
+            background-color: map-fetch($Button, Primary Text background-color) !important;
 
             span {
-                color: map-fetch($Button, Primary Text color);
+                color: map-fetch($Button, Primary Text color) !important;
             }
         }
 
         &.v-btn--icon {
             span {
-                color: map-fetch($Button, Primary Text color);
+                color: map-fetch($Button, Primary Text color) !important;
             }
         }
     }

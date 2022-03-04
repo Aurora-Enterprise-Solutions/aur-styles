@@ -1,9 +1,3 @@
 .v-card {
     box-shadow: map-fetch($Card, Shadow color) 0px 3px 16px -5px !important;
-
-    .v-card__title {
-        .aur-card-title {
-            font-weight: $font-weight-bold;
-        }
-    }
 }

@@ -20,14 +20,6 @@ $text-field-border-width: 1px;
         }
     }
 
-    &.error--text {
-        .v-input__slot {
-            & > fieldset {
-                color: map-fetch($Application, error-color);
-            }
-        }
-    }
-
     &:not(.v-input--is-focused):not(.v-input--has-state) {
         & > .v-input__control {
             & > .v-input__slot {

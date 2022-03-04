@@ -38,8 +38,8 @@
 
 $font-weight-light: 200;
 $font-weight-regular: 400;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
+$font-weight-semibold: 700;
+$font-weight-bold: 900;
 
 @include font-face('Inter', 'fonts/Inter-Light', $font-weight-light, normal, ttf);
 @include font-face('Inter', 'fonts/Inter-Regular', $font-weight-regular, normal, ttf);
@@ -114,6 +114,15 @@ a {
         font-style: normal;
         color: map-fetch($Font, Caption color);
     }
+
+    &.aur-message {
+        @extend %font-props-message;
+    }
+}
+
+li,
+.v-messages__message {
+    @extend %font-props-message;
 }
 
 p {
@@ -136,6 +145,18 @@ a {
 	font-weight: $font-weight-regular;
 	font-style: normal;
 	color: map-fetch($Font, Body color) !important;
+
+	b {
+		font-weight: $font-weight-bold;
+	}
+}
+
+%font-props-message {
+	font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: $font-weight-light;
+    font-style: normal;
+    color: map-fetch($Font, Body color) !important;
 
 	b {
 		font-weight: $font-weight-bold;
