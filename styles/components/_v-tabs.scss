@@ -1,0 +1,15 @@
+.v-tabs {
+    .v-tabs-bar {
+        height: 2.2rem;
+
+        .v-tab:not(.v-tab--active) {
+            color: map-fetch($Font, Caption color) !important;
+        }
+
+        .v-tab,
+        .v-tab.v-tab--active {
+            font-weight: $font-weight-semibold;
+            color: map-fetch($Font, Link color) !important;
+        }
+    }
+}

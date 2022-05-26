@@ -12,4 +12,17 @@
             }
         }
     }
+
+    .v-input__append-inner {
+        margin: unset !important;
+        align-self: center !important;
+    }
+
+    &--is-focused {
+        .v-input__append-inner {
+            i[class^="ri-"] {
+                color: map-fetch($Font, Highlight color);
+            }
+        }
+    }
 }

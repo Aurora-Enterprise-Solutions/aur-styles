@@ -1,0 +1,4 @@
+.v-toolbar {
+    background-color: map-fetch($Toolbar, Background color) !important;
+    border-bottom: 1px solid map-fetch($Toolbar, Border color) !important;
+}

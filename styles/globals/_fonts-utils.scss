@@ -1,0 +1,52 @@
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace +
+			str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: '?',
+		svg: '#' + str-replace($name, ' ', '_'),
+	);
+
+	$formats: (
+		otf: 'opentype',
+		ttf: 'truetype',
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-semibold: 700;
+$font-weight-bold: 900;
+
+$font-size-h1: 2.71rem;
+$font-size-h2: 2.14rem;
+$font-size-h3: 1.71rem;
+$font-size-h4: 1.42rem;
+$font-size-h5: 1.14rem;
+$font-size-h6: 1rem;
+$font-size-body: 1rem;
+$font-size-message: 0.85rem;
+$font-size-caption: 0.78rem;

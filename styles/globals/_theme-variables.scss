@@ -14,8 +14,13 @@
 }
 
 $Application: (
+    primary-color: var(--primary-color),
     background-color: var(--aur-background-color),
+    background-color-contrast: var(--aur-background-color-contrast),
     error-color: var(--aur-error-color),
+    shadow-color: var(--aur-shadow-color),
+    aurora-color: var(--aur-aurora-color),
+    disabled-color: var(--aur-disabled-color),
 );
 
 $Font: (
@@ -30,9 +35,15 @@ $Font: (
     ),
     Link: (
         color: var(--aur-font-color-link),
+        hover-color: var(--aur-font-color-link-hover),
+        secondary-color: var(--aur-font-color-link-secondary),
+        secondary-hover-color: var(--aur-font-color-link-secondary-hover),
     ),
     Disable: (
         color: var(--aur-font-color-disable),
+    ),
+    Highlight: (
+        color: var(--aur-font-color-highlight),
     ),
 );
 
@@ -65,6 +76,20 @@ $Button: (
             background-color: var(--aur-font-color-title),
         ),
     ),
+    Error: (
+        Colorful: (
+            color: var(--aur-button-error-colorful-color),
+            background-color: var(--aur-button-error-colorful-bkg-color),
+        ),
+        Text: (
+            color: var(--aur-button-error-text-color),
+            background-color: var(--aur-button-error-text-bkg-color),
+        ),
+        Icon: (
+            color: var(--aur-font-color-title),
+            background-color: var(--aur-font-color-title),
+        ),
+    ),
     Disabled: (
         Colorful: (
             color: var(--aur-button-disabled-colorful-color),
@@ -82,14 +107,53 @@ $Button: (
 );
 
 $Card: (
+    Background: (
+        color: var(--aur-card-background-color),
+    ),
     Shadow: (
         color: var(--aur-card-box-shadow-color),
     ),
 );
 
 $TextField: (
+    Input: (
+        placeholder-color: var(--aur-font-color-caption),
+    ),
     Border: (
         color: var(--aur-text-field-border-color),
         color-not-focused: var(--aur-text-field-border-color-not-focused),
+    ),
+);
+
+$Toolbar: (
+    Background: (
+        color: var(--aur-toolbar-background-color),
+    ),
+    Border: (
+        color: var(--aur-toolbar-border-color),
+    ),
+);
+
+$Avatar: (
+    Background: (
+        color: var(--aur-avatar-background-color),
+    ),
+);
+
+$ExpansionPanel: (
+    Border: (
+        color: var(--aur-expansion-panel-header-border-color),
+    ),
+);
+
+$DataTable: (
+    Header: (
+        background-color: var(--aur-data-table-header-background-color),
+    ),
+    Border: (
+        color: var(--aur-data-table-header-border-color),
+    ),
+    Body: (
+        tr-hover-background-color: var(--aur-data-table-body-hover-background-color),
     ),
 );

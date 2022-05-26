@@ -12,10 +12,18 @@ $text-field-border-width: 1px;
         .v-text-field__slot {
             .v-label {
                 @extend %font-props;
+
+                &.primary--text {
+                    color: map-fetch($TextField, Border color) !important;
+                }
             }
 
             input {
                 @extend %font-props;
+
+                &::placeholder {
+                    color: map-fetch($TextField, Input placeholder-color) !important;
+                }
             }
         }
     }

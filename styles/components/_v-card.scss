@@ -1,0 +1,4 @@
+&.v-card {
+    background-color: map-fetch($Card, Background color) !important;
+    box-shadow: map-fetch($Card, Shadow color) 0px 3px 16px -5px !important;
+}

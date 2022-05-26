@@ -2,28 +2,49 @@
 
 @mixin setTheme($config, $variable) {
     $color-variables:
+        'primary-color',
         'aur-error-color',
+        'aur-aurora-color',
+        'aur-disabled-color',
         'aur-background-color',
+        'aur-background-color-contrast',
+        'aur-shadow-color',
         'aur-font-color-title',
         'aur-font-color-body',
         'aur-font-color-caption',
         'aur-font-color-disable',
         'aur-font-color-link',
+        'aur-font-color-link-hover',
+        'aur-font-color-link-secondary',
+        'aur-font-color-link-secondary-hover',
+        'aur-font-color-highlight',
         'aur-button-primary-colorful-bkg-color',
         'aur-button-primary-colorful-color',
         'aur-button-secondary-colorful-bkg-color',
         'aur-button-secondary-colorful-color',
+        'aur-button-error-colorful-bkg-color',
+        'aur-button-error-colorful-color',
         'aur-button-disabled-colorful-bkg-color',
         'aur-button-disabled-colorful-color',
         'aur-button-primary-text-bkg-color',
         'aur-button-primary-text-color',
         'aur-button-secondary-text-bkg-color',
         'aur-button-secondary-text-color',
+        'aur-button-error-text-bkg-color',
+        'aur-button-error-text-color',
         'aur-button-disabled-text-bkg-color',
         'aur-button-disabled-text-color',
+        'aur-card-background-color',
         'aur-card-box-shadow-color',
         'aur-text-field-border-color',
-        'aur-text-field-border-color-not-focused',;
+        'aur-text-field-border-color-not-focused',
+        'aur-toolbar-background-color',
+        'aur-toolbar-border-color',
+        'aur-avatar-background-color',
+        'aur-expansion-panel-header-border-color',
+        'aur-data-table-header-border-color',
+        'aur-data-table-header-background-color',
+        'aur-data-table-body-hover-background-color';
 
 	// Warnings
     @each $color in $color-variables {
@@ -39,6 +60,12 @@
             --#{$color}: #{map.get($variable, $color)};
         }
 	}
+
+    @each $color in $color-variables {
+        .aur-color--#{map.get($config, 'name')}--#{$color} {
+            color: #{map.get($variable, $color)};
+        }
+    }
 }
 
 @import './theme-variables';

@@ -1,0 +1,58 @@
+.v-data-table {
+    .v-data-table__wrapper {
+        .v-data-table-header {
+            tr {
+                th {
+                    height: 2.2rem;
+                    border-top: 1px solid map-fetch($DataTable, Border color);
+                    border-bottom: 1px solid map-fetch($DataTable, Border color) !important;
+                    background-color: map-fetch($DataTable, Header background-color);
+                    box-shadow: unset;
+
+                    span {
+                        font-size: $font-size-message;
+                        font-weight: $font-weight-semibold;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    border-bottom: 1px solid map-fetch($DataTable, Border color) !important;
+                }
+
+                &:last-child {
+                    td {
+                        border-bottom: none !important;
+                    }
+                }
+
+                &:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+                    background-color: map-fetch($DataTable, Body tr-hover-background-color) !important;
+                }
+            }
+        }
+
+        .v-data-table__progress {
+            .v-progress-linear__background {
+                background-color: map-fetch($DataTable, Border color) !important;
+                border-color: map-fetch($DataTable, Border color) !important;
+            }
+
+            .v-progress-linear__indeterminate.v-progress-linear__indeterminate--active {
+                .long,
+                .short {
+                    background-color: map-fetch($DataTable, Border color) !important;
+                    border-color: map-fetch($DataTable, Border color) !important;
+                }
+            }
+        }
+    }
+
+    .v-data-footer {
+        border-top: 1px solid map-fetch($DataTable, Border color) !important;
+        margin-right: 0 !important;
+    }
+}

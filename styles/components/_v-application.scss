@@ -1,0 +1,8 @@
+.v-application {
+    font-family: "Inter", "Roboto", sans-serif;
+
+    .primary--text {
+        color: map-fetch($Application, primary-color) !important;
+        caret-color: map-fetch($Application, primary-color) !important;
+    }
+}

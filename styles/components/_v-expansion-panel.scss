@@ -1,0 +1,21 @@
+@use "sass:map";
+
+.v-expansion-panel {
+    &::before {
+        box-shadow: map-fetch($Application, shadow-color) 1px 2px 10px 0px !important;
+    }
+
+    .v-expansion-panel-header {
+        font-size: 1rem;
+
+        &--active {
+            border-bottom: 1px solid map-fetch($ExpansionPanel, Border color);
+        }
+    }
+
+    .v-expansion-panel-content {
+        &__wrap {
+            padding-top: map.get($sizes, 's');
+        }
+    }
+}

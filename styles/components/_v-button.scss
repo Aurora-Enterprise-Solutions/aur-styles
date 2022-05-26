@@ -1,0 +1,189 @@
+@use "sass:map";
+
+.v-btn {
+
+    span {
+        letter-spacing: normal;
+        font-weight: $font-weight-semibold;
+        font-size: 0.9rem;
+    }
+
+    &--is-elevated {
+        box-shadow: unset !important;
+    }
+
+    &:focus::before {
+        opacity: 0 !important;
+    }
+
+    &.v-btn--icon {
+        .v-btn__content {
+            font-size: 1.5rem;
+
+            i {
+                color: currentColor;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &:not([aur-type]),
+    &[aur-type='primary'] {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Primary Colorful background-color) !important;
+
+            span {
+                color: map-fetch($Button, Primary Colorful color) !important;
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Primary Colorful color) !important;
+                fill: map-fetch($Button, Primary Colorful color) !important;
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Primary Text background-color) !important;
+
+            span {
+                color: map-fetch($Button, Primary Text color) !important;
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Primary Text color) !important;
+                fill: map-fetch($Button, Primary Text color) !important;
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Primary Text color) !important;
+            }
+        }
+
+        &[outlined] {
+            border-color: map-fetch($Button, Primary Colorful background-color) !important;
+            color: map-fetch($Button, Primary Colorful background-color) !important;
+        }
+    }
+
+    &[aur-type='secondary'] {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Secondary Colorful background-color) !important;
+
+            span {
+                color: map-fetch($Button, Secondary Colorful color) !important;
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Secondary Colorful color) !important;
+                fill: map-fetch($Button, Secondary Colorful color) !important;
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Secondary Text background-color) !important;
+
+            span {
+                color: map-fetch($Button, Secondary Text color) !important;
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Secondary Text color) !important;
+                fill: map-fetch($Button, Secondary Text color) !important;
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Secondary Text color) !important;
+            }
+        }
+
+        &[outlined] {
+            border-color: map-fetch($Button, Secondary Colorful background-color) !important;
+            color: map-fetch($Button, Secondary Colorful background-color) !important;
+        }
+    }
+
+    &[aur-type='error'] {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Error Colorful background-color) !important;
+
+            span {
+                color: map-fetch($Button, Error Colorful color) !important;
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Error Colorful color) !important;
+                fill: map-fetch($Button, Error Colorful color) !important;
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Error Text background-color) !important;
+
+            span {
+                color: map-fetch($Button, Error Text color) !important;
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Error Text color) !important;
+                fill: map-fetch($Button, Error Text color) !important;
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Error Text color) !important;
+            }
+        }
+
+        &[outlined] {
+            border-color: map-fetch($Button, Error Colorful background-color) !important;
+            color: map-fetch($Button, Error Colorful background-color) !important;
+        }
+    }
+
+    &[class*='theme-'].v-btn--disabled {
+        &.v-btn--has-bg {
+            background-color: map-fetch($Button, Disabled Colorful background-color) !important;
+
+            span {
+                color: map-fetch($Button, Disabled Colorful color);
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Disabled Colorful color);
+                fill: map-fetch($Button, Disabled Colorful color);
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--text {
+            background-color: map-fetch($Button, Disabled Text background-color);
+
+            span {
+                color: map-fetch($Button, Disabled Text color);
+            }
+
+            i[class^=ri-] {
+                color: map-fetch($Button, Disabled Text color);
+                fill: map-fetch($Button, Disabled Text color);
+                margin-right: 3px;
+            }
+        }
+
+        &.v-btn--icon {
+            span {
+                color: map-fetch($Button, Disabled Text color);
+            }
+        }
+    }
+}

@@ -7,13 +7,6 @@
 	display: block;
 }
 
-$sizes: (
-	xs: 4px,
-	s: 8px,
-	m: 16px,
-	l: 24px,
-);
-
 $positions: t, l, b, r;
 
 @mixin size($pos, $size, $value, $type) {
@@ -81,4 +74,15 @@ $positions: t, l, b, r;
         font-style: inherit;
         color: inherit;
     }
+}
+
+.aur-white-text {
+    color: white;
+}
+
+i[class^="ri-"] {
+    font-size: 1.3rem;
+    fill: map-fetch($Font, Body color);
+    color: map-fetch($Font, Body color);
+    transition-duration: 0.3s;
 }
